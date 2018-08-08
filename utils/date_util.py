@@ -7,10 +7,12 @@ import time, datetime
 from datetime import date
 
 # ========== 格式转换 start ==========
+# 时间的表现形式：
+#   时间戳（timestamp）
+#   格式化的时间字符串（str）
+#   time模块的time.struct_time
+#   datetime模块的datetime类
 
-# 功能：timestamp类型转换为datetime类型
-# ts：传入的值为时间戳(整形)，如：1332888820
-# format：格式，如：%Y-%m-%d %H:%M:%S
 def timestamp_datetime (ts, format):
     # 经过localtime转换后变成：time.struct_time(tm_year=2012, tm_mon=3, tm_mday=28, tm_hour=6, tm_min=53, tm_sec=40, tm_wday=2, tm_yday=88, tm_isdst=0)
     ts = time.localtime(ts)
@@ -18,8 +20,6 @@ def timestamp_datetime (ts, format):
     dt = time.strftime(format, ts)
     return dt
 
-# 功能：datetime类型转换为timestamp类型
-# dt：字符串
 def datetime_timestamp (dt, format):
     # 将字符串转化为时间数组，再转化为时间戳
     ts = time.mktime(time.strptime(dt, format))
