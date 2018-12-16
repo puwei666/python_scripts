@@ -2,7 +2,7 @@
 #coding=utf-8
 # by puwei666
 
-import sys, os
+import sys, os, base64
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from date_util import *
@@ -50,4 +50,12 @@ def get_parent_dir(current_dir):
         dir_ary.pop()
         res = '/'.join(dir_ary)
     return res
+
+# base64解码
+def base64_decode(strs):
+    lens = len(strs)
+    lenx = lens - (lens % 4 if lens % 4 else 4)
+    strs = base64.b64decode(strs[:lenx])
+    return strs
+
 
