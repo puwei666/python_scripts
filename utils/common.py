@@ -58,4 +58,11 @@ def base64_decode(strs):
     strs = base64.b64decode(strs[:lenx])
     return strs
 
+# 过滤字符串中的None和单引号
+def filter_None_single_quotes (strs):
+    if strs is None:
+        strs = ''
+    else:
+        strs = replace_single_quotes(strs)
+    return strs
 

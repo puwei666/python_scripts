@@ -1,7 +1,7 @@
 # !usr/local/bin/python
 # coding=utf-8
 # 功能：测试date_util
-# by seven
+# by puwei666
 
 import sys
 sys.path.append('xx')
